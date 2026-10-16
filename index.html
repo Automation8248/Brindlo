@@ -2,171 +2,223 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>$1,000 Emergency Fund in 60 Days</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>$1,000 Emergency Fund in 60 Days | Brindlo</title>
 <meta name="description" content="A simple, no-fluff system to build your first $1,000 emergency fund in 60 days, even if you live paycheck to paycheck.">
 <meta property="og:title" content="$1,000 Emergency Fund in 60 Days">
-<meta property="og:description" content="A clear 60-day plan. No extreme budgeting. No complicated spreadsheets.">
+<meta property="og:description" content="A simple, no-fluff system to build your first $1,000 emergency fund in 60 days, even if you live paycheck to paycheck.">
 <meta property="og:image" content="https://res.cloudinary.com/dp3jdqkse/image/upload/v1792134641/OIG3_3_pz36tb.jpg">
+<meta name="theme-color" content="#10231c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#eef2ef;--ink:#10231c;--mut:#4e6158;--line:#cfd9d3;--card:#fff;--green:#14573f;--gold:#f0b429;--gold-d:#d99a0b}
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 "Public Sans",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
-  h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.1;margin:0;letter-spacing:-.02em}
-  a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-  header{padding:18px 0;border-bottom:1px solid var(--line)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.1rem}
-  .brand b{color:var(--green)}
-  .hdr-cta{font-weight:600;font-size:.95rem;text-decoration:none;border-bottom:2px solid var(--gold)}
-  /* hero */
-  .hero{padding:56px 0 48px}
-  .hero .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:44px;align-items:center}
-  h1{font-size:clamp(2.2rem,5.4vw,3.8rem);font-weight:800}
-  .lead{font-size:1.15rem;color:var(--mut);margin:20px 0 28px;max-width:34em}
-  .buyrow{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
-  .btn{appearance:none;border:0;background:var(--gold);color:#241a00;font:600 1.05rem "Public Sans",sans-serif;padding:16px 30px;border-radius:10px;cursor:pointer;box-shadow:0 2px 0 var(--gold-d);transition:transform .12s}
-  .btn:hover:not(:disabled){transform:translateY(-1px)}
-  .btn:disabled{opacity:.55;cursor:not-allowed}
-  .btn:focus-visible,a:focus-visible{outline:3px solid var(--green);outline-offset:3px}
-  .price{display:flex;flex-direction:column;line-height:1.2}
-  .price strong{font:800 1.9rem "Bricolage Grotesque",sans-serif}
-  .price span{font-size:.88rem;color:var(--mut)}
-  .err{color:#a3231a;font-size:.95rem;margin:12px 0 0;min-height:1.2em}
-  .ticks{list-style:none;padding:0;margin:26px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.95rem;color:var(--mut)}
-  .ticks li::before{content:"\2713";color:var(--green);font-weight:700;margin-right:8px}
-  .shot{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:0 18px 40px -22px rgba(16,35,28,.45)}
-  .shot img{display:block;width:100%;height:auto;border-radius:10px;aspect-ratio:3/2;object-fit:cover;background:#dfe8e3}
-  /* tracker */
-  .track{padding:56px 0;background:var(--ink);color:#eaf3ee}
-  .track .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  .track h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800}
-  .track p{color:#b5c9bf;margin:16px 0 0;max-width:30em}
-  .grid60{display:grid;grid-template-columns:repeat(10,1fr);gap:6px}
-  .grid60 i{aspect-ratio:1;border-radius:4px;background:#24392f;transition:background .25s}
-  .grid60 i.on{background:var(--gold)}
-  .gl{display:flex;justify-content:space-between;margin-top:12px;font-size:.88rem;color:#b5c9bf}
-  /* points */
-  .points{padding:64px 0}
-  .points h2{font-size:clamp(1.7rem,3.6vw,2.3rem);font-weight:800;margin-bottom:28px}
-  .cols{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-  .col{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
-  .col h3{font-size:1.2rem;margin-bottom:8px}
-  .col p{margin:0;color:var(--mut);font-size:.98rem}
-  /* final cta */
-  .final{padding:8px 0 72px}
-  .box{background:var(--green);color:#fff;border-radius:20px;padding:44px 30px;text-align:center}
-  .box h2{font-size:clamp(1.7rem,4vw,2.5rem);font-weight:800;max-width:18em;margin:0 auto 12px}
-  .box p{color:#cfe6da;margin:0 auto 26px;max-width:32em}
-  .box .buyrow{justify-content:center}
-  .box .price span{color:#cfe6da}
-  footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:.9rem;color:var(--mut)}
-  footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between}
-  footer nav{display:flex;gap:18px;flex-wrap:wrap}
-  /* thank you */
-  #thanks{display:none;padding:110px 0;text-align:center}
-  #thanks h1{font-size:clamp(2rem,5vw,3rem)}
-  #thanks p{color:var(--mut);margin-top:14px}
-  body.paid #thanks{display:block}
-  body.paid #page{display:none}
-  @media(max-width:820px){
-    .hero .wrap,.track .wrap{grid-template-columns:1fr;gap:32px}
-    .cols{grid-template-columns:1fr}
-    .hero{padding-top:36px}
-  }
-  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:root{--bg:#eef2ef;--ink:#10231c;--mut:#4e6158;--line:#cfd9d3;--card:#fff;--green:#14573f;--gold:#f0b429;--gold-d:#d99a0b;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.12;margin:0;letter-spacing:-.02em}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(238,242,239,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+.brand b{color:var(--green)}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{text-decoration:none;font-size:.97rem;font-weight:500;color:var(--mut)}
+.nav a:hover{color:var(--ink)}
+.nav .navbtn{background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600}
+.nav .navbtn:hover{color:#fff;background:var(--green)}
+/* buttons */
+.btn{appearance:none;border:0;background:var(--gold);color:#241a00;font:600 1.05rem "Public Sans",sans-serif;padding:16px 32px;border-radius:12px;cursor:pointer;box-shadow:0 3px 0 var(--gold-d);transition:transform .12s,box-shadow .12s;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 0 var(--gold-d)}
+.btn:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 var(--gold-d)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn.sec{background:transparent;border:2px solid var(--ink);box-shadow:none;color:var(--ink);padding:14px 28px}
+/* hero */
+.hero{padding:clamp(32px,6vw,72px) 0 clamp(36px,5vw,56px)}
+.hero .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,56px);align-items:center}
+h1{font-size:clamp(2.1rem,5.2vw,3.7rem);font-weight:800}
+.lead{font-size:clamp(1.02rem,2vw,1.18rem);color:var(--mut);margin:20px 0 28px;max-width:34em}
+.buyrow{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
+.price{display:flex;flex-direction:column;line-height:1.2}
+.price strong{font:800 1.9rem "Bricolage Grotesque",sans-serif}
+.price span{font-size:.88rem;color:var(--mut)}
+.err{color:#a3231a;font-size:.95rem;margin:12px 0 0;min-height:1.2em}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.93rem;color:var(--mut)}
+.ticks li::before{content:"\2713";color:var(--green);font-weight:700;margin-right:7px}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(8px,1.4vw,14px);box-shadow:0 22px 44px -26px rgba(16,35,28,.5)}
+.shot img{display:block;width:100%;height:auto;border-radius:12px;aspect-ratio:3/2;object-fit:cover;background:#dfe8e3}
+/* tracker */
+.track{padding:clamp(40px,6vw,72px) 0;background:var(--ink);color:#eaf3ee}
+.track .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.track h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800}
+.track p{color:#b5c9bf;margin:16px 0 0;max-width:30em}
+.grid60{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,1vw,7px)}
+.grid60 i{aspect-ratio:1;border-radius:4px;background:#24392f;transition:background .25s}
+.grid60 i.on{background:var(--gold)}
+.gl{display:flex;justify-content:space-between;margin-top:12px;font-size:.88rem;color:#b5c9bf}
+/* sections */
+.sec{padding:clamp(44px,7vw,80px) 0}
+.sec h2{font-size:clamp(1.65rem,3.6vw,2.4rem);font-weight:800;margin-bottom:28px;max-width:20em}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.col h3{font-size:1.2rem;margin-bottom:8px}
+.col p{margin:0;color:var(--mut);font-size:.98rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:start}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checks li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px 16px 50px;position:relative}
+.checks li::before{content:"\2713";position:absolute;left:18px;top:14px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.8rem;display:grid;place-items:center;font-weight:700}
+/* faq */
+.faq{max-width:760px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.faq summary{cursor:pointer;padding:18px 20px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0;padding:0 20px 18px;color:var(--mut)}
+.faq a{color:var(--green);font-weight:600}
+/* final cta */
+.final{padding:8px 0 clamp(48px,7vw,84px)}
+.box{background:var(--green);color:#fff;border-radius:22px;padding:clamp(32px,6vw,56px) clamp(20px,4vw,40px);text-align:center}
+.box h2{font-size:clamp(1.65rem,4vw,2.5rem);font-weight:800;max-width:18em;margin:0 auto 12px}
+.box p{color:#cfe6da;margin:0 auto 26px;max-width:32em}
+.box .buyrow{justify-content:center}
+.box .price span{color:#cfe6da}
+/* footer */
+.ftr{border-top:1px solid var(--line);padding:36px 0 44px;font-size:.93rem;color:var(--mut);background:#e6ece8}
+.ftr .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 40px}
+.ftr nav{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:flex-end}
+.ftr nav a{text-decoration:none;font-weight:500}
+.ftr nav a:hover{color:var(--ink);text-decoration:underline}
+.ftr .small{grid-column:1/-1;font-size:.85rem}
+/* sticky mobile buy bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:#fff;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .25s}
+.bar.show{transform:none}
+.bar .price strong{font-size:1.3rem;color:#fff}
+.bar .price span{color:#b5c9bf;font-size:.8rem}
+.bar .btn{padding:12px 24px;font-size:1rem}
+/* inner pages */
+.page{padding:clamp(32px,6vw,64px) 0 clamp(48px,7vw,88px)}
+.doc{max-width:760px}
+.doc h1{font-size:clamp(1.9rem,4.4vw,2.8rem);margin-bottom:6px}
+.doc .upd{color:var(--mut);margin:0 0 28px;font-size:.93rem}
+.doc h2{font-size:1.3rem;margin:30px 0 8px}
+.doc p,.doc li{color:#2b3f36}
+.doc a{color:var(--green);font-weight:600}
+.form{display:grid;gap:14px;margin-top:22px}
+.form label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+.form input,.form textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.center{text-align:center;padding:clamp(60px,12vw,130px) 0}
+.center h1{font-size:clamp(2rem,5vw,3.2rem)}
+.center p{color:var(--mut);margin:14px auto 28px;max-width:30em}
+@media(max-width:860px){
+  .hero .wrap,.track .wrap,.two{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  .nav a:not(.navbtn){display:none}
+  .ftr .wrap{grid-template-columns:1fr}
+  .ftr nav{justify-content:flex-start}
+  .bar{display:flex}
+  body.has-bar{padding-bottom:78px}
+  .buyrow .btn{width:100%}
+  .buyrow .price{width:100%;flex-direction:row;align-items:baseline;gap:10px}
+}
+@media(max-width:420px){.grid60{gap:3px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="wrap">
+  <a class="brand" href="index.html">Brindlo</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html#plan">The plan</a><a href="index.html#faq">FAQ</a><a href="contact.html">Contact</a>
+    <a class="navbtn" href="index.html#buy">Get the plan</a>
+  </nav>
+</div></header>
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div>
+    <h1>Build your first $1,000 emergency fund in 60 days.</h1>
+    <p class="lead">A simple, no-fluff system for people living paycheck to paycheck. A clear plan that actually works, without extreme budgeting or complicated spreadsheets.</p>
+    <div class="buyrow" id="buy">
+      <button class="btn js-buy" disabled>Buy now</button>
+      <div class="price"><strong class="js-price">&hellip;</strong><span>One-time payment</span></div>
+    </div>
+    <p class="err js-err" role="alert"></p>
+    <ul class="ticks"><li>Secure checkout by Paddle</li><li>No subscription</li><li>Receipt sent to your email</li></ul>
+  </div>
+  <div class="shot"><img src="https://res.cloudinary.com/dp3jdqkse/image/upload/v1792134641/OIG3_3_pz36tb.jpg" alt="$1,000 Emergency Fund in 60 Days" width="1200" height="800" fetchpriority="high"></div>
+</div></section>
 
-<div id="thanks" class="wrap">
-  <h1>Thank you!</h1>
-  <p>Your payment went through. Please check your email for your receipt.</p>
+<section class="track" id="plan" aria-label="The 60-day goal"><div class="wrap">
+  <div>
+    <h2>About $17 a day gets you there.</h2>
+    <p>$1,000 over 60 days is a small daily step, not a big sacrifice. The plan shows you how to find it and keep going.</p>
+  </div>
+  <div>
+    <div class="grid60" id="grid" aria-hidden="true"></div>
+    <div class="gl"><span>Day 1</span><span>Day 60: $1,000</span></div>
+  </div>
+</div></section>
+
+<section class="sec"><div class="wrap">
+  <h2>Made for real life, not perfect budgets.</h2>
+  <div class="cols">
+    <div class="col"><h3>A clear plan</h3><p>Know what to do next, step by step, instead of guessing where to start.</p></div>
+    <div class="col"><h3>No extreme budgeting</h3><p>You don't need to cut everything you enjoy to build a safety net.</p></div>
+    <div class="col"><h3>No complicated spreadsheets</h3><p>Simple enough to follow even when money is tight and time is short.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:0"><div class="wrap two">
+  <h2 style="margin:0">Is this for you?</h2>
+  <ul class="checks">
+    <li>You live paycheck to paycheck and have no savings cushion yet.</li>
+    <li>You want one simple goal: your first $1,000.</li>
+    <li>You'd rather follow a clear plan than build a complicated system.</li>
+  </ul>
+</div></section>
+
+<section class="sec" id="faq" style="padding-top:0"><div class="wrap">
+  <h2>Questions, answered.</h2>
+  <div class="faq">
+    <details><summary>Is this a subscription?</summary><p>No. It is a one-time payment. You will not be charged again.</p></details>
+    <details><summary>Do I need spreadsheets or a strict budget?</summary><p>No. The plan is built to be simple, with no extreme budgeting and no complicated spreadsheets.</p></details>
+    <details><summary>How does checkout work?</summary><p>Checkout opens securely on this page, powered by Paddle. You see your final total, including any tax for your location, before you pay.</p></details>
+    <details><summary>Can I get a refund?</summary><p>Please read our <a href="refund.html">refund policy</a> for the details.</p></details>
+    <details><summary>I have a question before I buy.</summary><p>We're happy to help. Send us a message on the <a href="contact.html">contact page</a>.</p></details>
+  </div>
+</div></section>
+
+<section class="final"><div class="wrap"><div class="box">
+  <h2>Start your $1,000 emergency fund today.</h2>
+  <p>One payment. Your first safety net, built in 60 days.</p>
+  <div class="buyrow">
+    <button class="btn js-buy" disabled>Buy now</button>
+    <div class="price"><strong class="js-price">&hellip;</strong><span>One-time payment</span></div>
+  </div>
+  <p class="err js-err" role="alert"></p>
+</div></div></section>
+</main>
+
+<div class="bar" id="bar" aria-hidden="true">
+  <div class="price"><strong class="js-price">&hellip;</strong><span>One-time payment</span></div>
+  <button class="btn js-buy" disabled tabindex="-1">Buy now</button>
 </div>
-
-<div id="page">
-  <header>
-    <div class="wrap">
-      <div class="brand">Emergency<b>Fund</b></div>
-      <a class="hdr-cta" href="#buy">Get the plan</a>
-    </div>
-  </header>
-
-  <section class="hero">
-    <div class="wrap">
-      <div>
-        <h1>Build your first $1,000 emergency fund in 60 days.</h1>
-        <p class="lead">A simple, no-fluff system for people living paycheck to paycheck. A clear plan that actually works, without extreme budgeting or complicated spreadsheets.</p>
-        <div class="buyrow" id="buy">
-          <button class="btn js-buy" disabled>Buy now</button>
-          <div class="price"><strong class="js-price">…</strong><span>One-time payment</span></div>
-        </div>
-        <p class="err js-err" role="alert"></p>
-        <ul class="ticks">
-          <li>Secure checkout by Paddle</li>
-          <li>No subscription</li>
-          <li>Receipt sent to your email</li>
-        </ul>
-      </div>
-      <div class="shot">
-        <img src="https://res.cloudinary.com/dp3jdqkse/image/upload/v1792134641/OIG3_3_pz36tb.jpg" alt="$1,000 Emergency Fund in 60 Days" width="1200" height="800" fetchpriority="high">
-      </div>
-    </div>
-  </section>
-
-  <section class="track" aria-label="The 60-day goal">
-    <div class="wrap">
-      <div>
-        <h2>About $17 a day gets you there.</h2>
-        <p>$1,000 over 60 days is a small daily step, not a big sacrifice. The plan shows you how to find it and keep going.</p>
-      </div>
-      <div>
-        <div class="grid60" id="grid" aria-hidden="true"></div>
-        <div class="gl"><span>Day 1</span><span>Day 60: $1,000</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="points">
-    <div class="wrap">
-      <h2>Made for real life, not perfect budgets.</h2>
-      <div class="cols">
-        <div class="col"><h3>A clear plan</h3><p>Know what to do next, step by step, instead of guessing where to start.</p></div>
-        <div class="col"><h3>No extreme budgeting</h3><p>You don't need to cut everything you enjoy to build a safety net.</p></div>
-        <div class="col"><h3>No complicated spreadsheets</h3><p>Simple enough to follow even when money is tight and time is short.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="final">
-    <div class="wrap">
-      <div class="box">
-        <h2>Start your $1,000 emergency fund today.</h2>
-        <p>One payment. Your first safety net, built in 60 days.</p>
-        <div class="buyrow">
-          <button class="btn js-buy" disabled>Buy now</button>
-          <div class="price"><strong class="js-price">…</strong><span>One-time payment</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="wrap">
-      <span>&copy; <span id="yr"></span> Your Business Name. All rights reserved.</span>
-      <nav>
-        <!-- Paddle requires these pages. Replace # with your real links. -->
-        <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Refund policy</a><a href="#">Contact</a>
-      </nav>
-    </div>
-  </footer>
-</div>
-
+<footer class="ftr"><div class="wrap">
+  <div><strong>Brindlo</strong><br>Build your first $1,000 emergency fund in 60 days.</div>
+  <nav aria-label="Legal">
+    <a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="refund.html">Refund policy</a><a href="contact.html">Contact</a>
+  </nav>
+  <div class="small">&copy; <span data-year>2026</span> Brindlo. All rights reserved. Payments are processed by Paddle, our Merchant of Record.</div>
+</div></footer>
+<script>document.querySelectorAll("[data-year]").forEach(function(e){e.textContent=new Date().getFullYear()});</script>
 <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 <script>
 (function () {
@@ -174,23 +226,26 @@
   var PRICE_ID = 'pri_01m51q96wtxyx5rmshkapyaep1';
   var items = [{ priceId: PRICE_ID, quantity: 1 }];
 
-  document.getElementById('yr').textContent = new Date().getFullYear();
-
-  if (new URLSearchParams(location.search).get('paid') === '1') {
-    document.body.classList.add('paid');
-    return;
+  // 60-day tracker (instant when reduced motion is preferred)
+  var grid = document.getElementById('grid'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (var i = 0; i < 60; i++) {
+    var c = document.createElement('i'); grid.appendChild(c);
+    (function (el, n) { reduce ? el.classList.add('on') : setTimeout(function () { el.classList.add('on'); }, 500 + n * 35); })(c, i);
   }
 
-  // 60-day tracker animation (instant if the visitor prefers reduced motion)
-  var grid = document.getElementById('grid'), cells = [];
-  for (var i = 0; i < 60; i++) { var c = document.createElement('i'); grid.appendChild(c); cells.push(c); }
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  cells.forEach(function (c, n) { reduce ? c.classList.add('on') : setTimeout(function () { c.classList.add('on'); }, 500 + n * 35); });
+  var buttons = document.querySelectorAll('.js-buy'), prices = document.querySelectorAll('.js-price'), errs = document.querySelectorAll('.js-err');
+  function showErr(m) { errs.forEach(function (e) { e.textContent = m; }); }
 
-  var buttons = document.querySelectorAll('.js-buy');
-  var prices = document.querySelectorAll('.js-price');
-  var errs = document.querySelectorAll('.js-err');
-  function showErr(msg) { errs.forEach(function (e) { e.textContent = msg; }); }
+  // Sticky mobile buy bar: shown once the main button scrolls out of view
+  var bar = document.getElementById('bar'), heroBtn = document.querySelector('#buy .js-buy');
+  if ('IntersectionObserver' in window && heroBtn) {
+    new IntersectionObserver(function (en) {
+      var out = !en[0].isIntersecting && en[0].boundingClientRect.top < 0;
+      bar.classList.toggle('show', out); document.body.classList.toggle('has-bar', out);
+      bar.setAttribute('aria-hidden', out ? 'false' : 'true');
+      bar.querySelector('.js-buy').tabIndex = out ? 0 : -1;
+    }).observe(heroBtn);
+  }
 
   try { Paddle.Initialize({ token: TOKEN }); } catch (e) { showErr('Checkout could not load. Please refresh the page.'); return; }
 
@@ -206,11 +261,7 @@
     b.addEventListener('click', function () {
       Paddle.Checkout.open({
         items: items,
-        settings: {
-          displayMode: 'overlay',
-          variant: 'one-page',
-          successUrl: location.origin + location.pathname + '?paid=1'
-        }
+        settings: { displayMode: 'overlay', variant: 'one-page', successUrl: location.origin + '/thank-you.html' }
       });
     });
   });
