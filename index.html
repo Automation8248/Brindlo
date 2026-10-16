@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$1,000 Emergency Fund in 60 Days</title>
+<style>
+  body{margin:0;font:16px/1.5 Georgia,serif;background:#fbfaf7;color:#1c1b19}
+  main{max-width:560px;margin:0 auto;padding:40px 20px}
+  .card{border:1px solid #d9d4c8;padding:24px}
+  h1{font-size:1.8rem;line-height:1.2;margin:0 0 12px}
+  .price{font-size:2rem;margin:16px 0}
+  .price small{font-size:1rem;color:#6b675f}
+  button{width:100%;background:#1f4d3a;color:#fff;border:0;padding:14px;font:inherit;cursor:pointer}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  .err{color:#b3261e}
+</style>
+</head>
+<body>
+<main id="app">
+  <div class="card">
+    <h1>$1,000 Emergency Fund in 60 Days</h1>
+    <p>A simple, no-fluff system to build your first $1,000 emergency fund in just 60 days, even if you are living paycheck to paycheck. No extreme budgeting. No complicated spreadsheets.</p>
+    <p class="price"><span id="price">…</span> <small>one-time payment</small></p>
+    <p class="err" id="err" role="alert"></p>
+    <button id="buy" disabled>Buy now</button>
+  </div>
+</main>
+
+<script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+<script>
+  const TOKEN = 'live_459b7221458960780c2a421dc63';
+  const PRICE_ID = 'pri_01m51q96wtxyx5rmshkapyaep1';
+  const items = [{ priceId: PRICE_ID, quantity: 1 }];
+
+  if (new URLSearchParams(location.search).get('paid') === '1') {
+    document.getElementById('app').innerHTML =
+      '<div class="card"><h1>Thank you!</h1><p>Your payment went through. Check your email for the receipt.</p></div>';
+  } else {
+    Paddle.Initialize({ token: TOKEN });
+
+    Paddle.PricePreview({ items })
+      .then(function (res) {
+        document.getElementById('price').textContent = res.data.details.lineItems[0].formattedTotals.total;
+        document.getElementById('buy').disabled = false;
+      })
+      .catch(function () {
+        document.getElementById('err').textContent = 'Could not load the price. Please refresh.';
+      });
+
+    document.getElementById('buy').addEventListener('click', function () {
+      Paddle.Checkout.open({
+        items: items,
+        settings: {
+          displayMode: 'overlay',
+          variant: 'one-page',
+          successUrl: location.origin + location.pathname + '?paid=1'
+        }
+      });
+    });
+  }
+</script>
+</body>
+</html>
