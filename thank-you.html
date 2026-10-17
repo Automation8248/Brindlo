@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thank you | Brindlo</title>
+<meta name="description" content="Your payment went through.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#10231c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2ef;--ink:#10231c;--mut:#4e6158;--line:#cfd9d3;--card:#fff;--green:#14573f;--gold:#f0b429;--gold-d:#d99a0b;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 "Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",system-ui,sans-serif;line-height:1.12;margin:0;letter-spacing:-.02em}
+img{max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(16px,4vw,28px)}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;padding:8px 12px;border-radius:8px;z-index:100}
+.skip:focus{left:8px}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+/* header */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(238,242,239,.9);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.15rem;text-decoration:none}
+.brand b{color:var(--green)}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{text-decoration:none;font-size:.97rem;font-weight:500;color:var(--mut)}
+.nav a:hover{color:var(--ink)}
+.nav .navbtn{background:var(--ink);color:#fff;padding:10px 18px;border-radius:10px;font-weight:600}
+.nav .navbtn:hover{color:#fff;background:var(--green)}
+/* buttons */
+.btn{appearance:none;border:0;background:var(--gold);color:#241a00;font:600 1.05rem "Public Sans",sans-serif;padding:16px 32px;border-radius:12px;cursor:pointer;box-shadow:0 3px 0 var(--gold-d);transition:transform .12s,box-shadow .12s;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 4px 0 var(--gold-d)}
+.btn:active:not(:disabled){transform:translateY(2px);box-shadow:0 1px 0 var(--gold-d)}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn.sec{background:transparent;border:2px solid var(--ink);box-shadow:none;color:var(--ink);padding:14px 28px}
+/* hero */
+.hero{padding:clamp(32px,6vw,72px) 0 clamp(36px,5vw,56px)}
+.hero .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,56px);align-items:center}
+h1{font-size:clamp(2.1rem,5.2vw,3.7rem);font-weight:800}
+.lead{font-size:clamp(1.02rem,2vw,1.18rem);color:var(--mut);margin:20px 0 28px;max-width:34em}
+.buyrow{display:flex;flex-wrap:wrap;align-items:center;gap:16px 22px}
+.price{display:flex;flex-direction:column;line-height:1.2}
+.price strong{font:800 1.9rem "Bricolage Grotesque",sans-serif}
+.price span{font-size:.88rem;color:var(--mut)}
+.err{color:#a3231a;font-size:.95rem;margin:12px 0 0;min-height:1.2em}
+.ticks{list-style:none;padding:0;margin:22px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;font-size:.93rem;color:var(--mut)}
+.ticks li::before{content:"\2713";color:var(--green);font-weight:700;margin-right:7px}
+.shot{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(8px,1.4vw,14px);box-shadow:0 22px 44px -26px rgba(16,35,28,.5)}
+.shot img{display:block;width:100%;height:auto;border-radius:12px;aspect-ratio:3/2;object-fit:cover;background:#dfe8e3}
+/* tracker */
+.track{padding:clamp(40px,6vw,72px) 0;background:var(--ink);color:#eaf3ee}
+.track .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,56px);align-items:center}
+.track h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800}
+.track p{color:#b5c9bf;margin:16px 0 0;max-width:30em}
+.grid60{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(4px,1vw,7px)}
+.grid60 i{aspect-ratio:1;border-radius:4px;background:#24392f;transition:background .25s}
+.grid60 i.on{background:var(--gold)}
+.gl{display:flex;justify-content:space-between;margin-top:12px;font-size:.88rem;color:#b5c9bf}
+/* sections */
+.sec{padding:clamp(44px,7vw,80px) 0}
+.sec h2{font-size:clamp(1.65rem,3.6vw,2.4rem);font-weight:800;margin-bottom:28px;max-width:20em}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.col{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.col h3{font-size:1.2rem;margin-bottom:8px}
+.col p{margin:0;color:var(--mut);font-size:.98rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:start}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.checks li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px 16px 50px;position:relative}
+.checks li::before{content:"\2713";position:absolute;left:18px;top:14px;width:22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.8rem;display:grid;place-items:center;font-weight:700}
+/* faq */
+.faq{max-width:760px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+.faq summary{cursor:pointer;padding:18px 20px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--green)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0;padding:0 20px 18px;color:var(--mut)}
+.faq a{color:var(--green);font-weight:600}
+/* final cta */
+.final{padding:8px 0 clamp(48px,7vw,84px)}
+.box{background:var(--green);color:#fff;border-radius:22px;padding:clamp(32px,6vw,56px) clamp(20px,4vw,40px);text-align:center}
+.box h2{font-size:clamp(1.65rem,4vw,2.5rem);font-weight:800;max-width:18em;margin:0 auto 12px}
+.box p{color:#cfe6da;margin:0 auto 26px;max-width:32em}
+.box .buyrow{justify-content:center}
+.box .price span{color:#cfe6da}
+/* footer */
+.ftr{border-top:1px solid var(--line);padding:36px 0 44px;font-size:.93rem;color:var(--mut);background:#e6ece8}
+.ftr .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:20px 40px}
+.ftr nav{display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:flex-end}
+.ftr nav a{text-decoration:none;font-weight:500}
+.ftr nav a:hover{color:var(--ink);text-decoration:underline}
+.ftr .small{grid-column:1/-1;font-size:.85rem}
+/* sticky mobile buy bar */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:#fff;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));display:none;align-items:center;justify-content:space-between;gap:14px;transform:translateY(110%);transition:transform .25s}
+.bar.show{transform:none}
+.bar .price strong{font-size:1.3rem;color:#fff}
+.bar .price span{color:#b5c9bf;font-size:.8rem}
+.bar .btn{padding:12px 24px;font-size:1rem}
+/* inner pages */
+.page{padding:clamp(32px,6vw,64px) 0 clamp(48px,7vw,88px)}
+.doc{max-width:760px}
+.doc h1{font-size:clamp(1.9rem,4.4vw,2.8rem);margin-bottom:6px}
+.doc .upd{color:var(--mut);margin:0 0 28px;font-size:.93rem}
+.doc h2{font-size:1.3rem;margin:30px 0 8px}
+.doc p,.doc li{color:#2b3f36}
+.doc a{color:var(--green);font-weight:600}
+.form{display:grid;gap:14px;margin-top:22px}
+.form label{display:grid;gap:6px;font-weight:600;font-size:.95rem}
+.form input,.form textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+.center{text-align:center;padding:clamp(60px,12vw,130px) 0}
+.center h1{font-size:clamp(2rem,5vw,3.2rem)}
+.center p{color:var(--mut);margin:14px auto 28px;max-width:30em}
+@media(max-width:860px){
+  .hero .wrap,.track .wrap,.two{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr}
+  .nav a:not(.navbtn){display:none}
+  .ftr .wrap{grid-template-columns:1fr}
+  .ftr nav{justify-content:flex-start}
+  .bar{display:flex}
+  body.has-bar{padding-bottom:78px}
+  .buyrow .btn{width:100%}
+  .buyrow .price{width:100%;flex-direction:row;align-items:baseline;gap:10px}
+}
+@media(max-width:420px){.grid60{gap:3px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+.ic{width:1.15em;height:1.15em;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px}
+.ftr nav a,.nav a{display:inline-flex;align-items:center;gap:7px}
+.cardrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:26px 0}
+.cardrow a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;font-weight:600;color:var(--ink)}
+.cardrow a:hover{border-color:var(--green)}
+.cardrow .ic{width:22px;height:22px;color:var(--green)}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.pill{display:inline-grid;place-items:center;width:64px;height:64px;border-radius:50%;background:var(--green);color:#fff;margin-bottom:18px}
+.pill .ic{width:30px;height:30px}
+@media(max-width:860px){.actions .btn{width:100%}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr"><div class="wrap">
+  <a class="brand" href="index.html">Brindlo</a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html#plan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/></svg> The plan</a><a href="index.html#faq"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7"/><path d="M12 17v.5"/></svg> FAQ</a><a href="contact.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Contact</a>
+    <a class="navbtn" href="index.html#buy"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.5L21 8H6"/></svg> Get the plan</a>
+  </nav>
+</div></header>
+<main id="main" class="wrap center"><span class="pill"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l3 3 5-6"/></svg></span><h1>Thank you!</h1><p>Your payment went through. Paddle has emailed your receipt to you. If you have any questions about your order, we are here to help.</p><div class="actions"><a class="btn" href="contact.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Contact support</a><a class="btn sec" href="index.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg> Back to home</a></div></main>
+<footer class="ftr"><div class="wrap">
+  <div><strong>Brindlo</strong><br>Build your first $1,000 emergency fund in 60 days.</div>
+  <nav aria-label="Legal">
+    <a href="terms.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h6"/></svg> Terms</a><a href="privacy.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg> Privacy</a><a href="refund.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg> Refund policy</a><a href="contact.html"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg> Contact</a>
+  </nav>
+  <div class="small">&copy; <span id="yr">2026</span> Brindlo. All rights reserved. Payments are processed by Paddle, our Merchant of Record.</div>
+</div></footer>
+<script>document.getElementById("yr").textContent=new Date().getFullYear();</script>
+</body>
+</html>
